@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Bernaschi"
+  given-names: "Massimo"
+  orcid: "https://orcid.org/0000-0003-3661-9836"
+- family-names: "Celestini"
+  given-names: "Alessandro"
+  orcid: "https://orcid.org/0000-0002-8493-4550"
+  - family-names: "Cianfriglia"
+  given-names: "Marco"
+  orcid: "https://orcid.org/0000-0002-6775-7804"
+- family-names: "Guarino"
+  given-names: "Stefano"
+  orcid: "https://orcid.org/0000-0002-1545-7711"
+- family-names: "Italiano"
+  given-names: "Giuseppe F."
+  orcid: "https://orcid.org/0000-0002-9492-9894"
+- family-names: "Mastrostefano"
+  given-names: "Enrico"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Zastrow"
+  given-names: "Lena"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+
+title: "Seeking Critical Nodes in Digraphs - repo"
+version: 1.0.0
+doi: 
+date-released: 2022-08-07
+url: "https://github.com/github/iac-cranic/seeking_critical_nodes_digraphs"
