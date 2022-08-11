@@ -5,8 +5,8 @@
 
 /* FILE: graph_functions.h */
 
-#ifndef __CNH_GRAPH_FUNCTIONS_H_
-#define __CNH_GRAPH_FUNCTIONS_H_
+#ifndef __CRANIC_CNH_GRAPH_FUNCTIONS_H_
+#define __CRANIC_CNH_GRAPH_FUNCTIONS_H_
 
 #include "define.h"
 

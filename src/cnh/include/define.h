@@ -5,8 +5,8 @@
 
 /* File: define.h */
 
-#ifndef __CNH_DEFINE_H_
-#define __CNH_DEFINE_H_
+#ifndef __CRANIC_CNH_DEFINE_H_
+#define __CRANIC_CNH_DEFINE_H_
 
 #include <stdio.h>
 #include <stdlib.h>

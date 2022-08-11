@@ -3,8 +3,8 @@
 //This project is released under GPLv3; the full license file can be found in LICENSE file in the root of the repository.
 //For any issue please contact us on github or at < cranic-info<AT>iac.rm.cnr.it >
 
-#ifndef __IGRAPH_CENTRALITIES_WRAPPER_IGRAPH_H_
-#define __IGRAPH_CENTRALITIES_WRAPPER_IGRAPH_H_
+#ifndef __CRANIC_IGRAPH_CENTRALITIES_WRAPPER_IGRAPH_H_
+#define __CRANIC_IGRAPH_CENTRALITIES_WRAPPER_IGRAPH_H_
 
 #include <igraph.h>
 #include "define.h"

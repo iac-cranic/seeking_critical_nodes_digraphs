@@ -5,8 +5,8 @@
 
 /* File: timer.h */
 
-#ifndef __CNH_TIMER_H_
-#define __CNH_TIMER_H_
+#ifndef __CRANIC_CNH_TIMER_H_
+#define __CRANIC_CNH_TIMER_H_
 
 #include <sys/time.h>
 #include <stdio.h>
