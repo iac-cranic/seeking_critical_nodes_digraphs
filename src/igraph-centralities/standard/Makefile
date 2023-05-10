@@ -2,7 +2,7 @@ SDIR =.
 IDIR=../include
 
 GCC_NAME    =  gcc
-GCC_FLAGS   =  -pedantic  -Wall  -std=c99  -I$(IDIR) -ligraph
+GCC_FLAGS   =  -pedantic  -Wall  -std=c99  -I$(IDIR) -I$(IGRAPH_HEADERS) -ligraph
 #GCC_FLAGS 	+= -DDEBUG 
 GCC_FLAGS 	+= -g -O3 
 TARGET = igraph_standard igraph_random 
@@ -16,7 +16,7 @@ vpath %.c $(SDIR)
 .PHONY: all clean install distclean 
 
 %.o: %.c
-	$(CCC) -g -I${IDIR} -o $@ -c $< 
+	$(CCC) $(FLAGS) -o $@ -c $< 
 
 
 ### MAKE ALL
@@ -33,10 +33,10 @@ igraph_random: igraph_random.o ../common/utils.o ../common/wrapper_igraph.o
 	$(CCC) -o $@ $^ $(FLAGS) 
 
 ../common/utils.o:
-	$(CCC) -I${IDIR} -o ../common/utils.o -c ../common/utils.c
+	$(CCC) $(FLAGS)  -o ../common/utils.o -c ../common/utils.c
 	
 ../common/wrapper_igraph.o:
-	$(CCC) -I${IDIR} -o ../common/wrapper_igraph.o -c ../common/wrapper_igraph.c
+	$(CCC) $(FLAGS)  -o ../common/wrapper_igraph.o -c ../common/wrapper_igraph.c
 
 ### CLEAN
 

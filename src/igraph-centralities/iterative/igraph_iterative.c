@@ -35,8 +35,7 @@
 #define DEGREE_OUT_CMD(graph,result) igraph_degree(&graph, &result, igraph_vss_all(), IGRAPH_OUT, 0)
 #define PAGERANK_CMD(graph,result) igraph_pagerank(&graph, IGRAPH_PAGERANK_ALGO_PRPACK, &result, 0, igraph_vss_all(), 0, 0.85, 0, 0);
 
-#define USAGE "\nUsage: igraph_iterative --graph <FILE_NAME> --format <TYPE> --outfile <FILE_NAME> --metric <METRIC_TYPE>\n\n"\
-	"\tThe program tests the auxiliary wrapper functions to igraph\n\n"\
+#define USAGE "\nUsage: igraph_iterative --graph <FILE_NAME> --format <TYPE> --outfile <FILE_NAME> --metric <METRIC_TYPE> --percentage <PERCENTAGE>\n\n"\
 "\t-f, --graph <FILE_NAME>\n"\
 "\t\tRead the graph from file <FILE_NAME>.\n"\
 "\t-m, --metric <METRIC_TYPS>\n"\
@@ -51,7 +50,7 @@
 "\t\t\t- 4 Pagerank\n"\
 "\t-o, --outfile <FILE_NAME>\n"\
 "\t\tThe output filename <FILE_NAME>.\n"\
-"\t-p, percentage <PERCENTAGE>.\n"\
+"\t-p, --percentage <PERCENTAGE>.\n"\
 "\t\tThe percentage of nodes to output.\n"\
 "\t-t, --format <TYPE>\n"\
 "\t\tThe format of the file containing the graph, admitted types are:\n"\

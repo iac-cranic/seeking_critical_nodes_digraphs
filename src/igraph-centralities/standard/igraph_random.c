@@ -17,16 +17,15 @@
 
 
 
-#define USAGE "\nUsage: igraph_random --graph <FILE_NAME> --format <TYPE> --outfile <FILE_NAME>\n\n"\
-	"\tThe program tests the auxiliary wrapper functions to igraph\n\n"\
+#define USAGE "\nUsage: igraph_random --graph <FILE_NAME> --format <TYPE> --outfile <FILE_NAME> --percentage <PERCENTAGE>\n\n"\
 "\t-f, --graph <FILE_NAME>\n"\
 "\t\tRead the graph from file <FILE_NAME>.\n"\
 "\t-o, --outfile <FILE_NAME>\n"\
-"\t\tThe output filename <FILE_NAME>.\n"\
-"\t-p, percentage <PERCENTAGE>.\n"\
-"\t\tThe percentage of nodes to output.\n"\
+"\t\tThe name of the output file.\n"\
+"\t-p, --percentage <PERCENTAGE>.\n"\
+"\t\tThe percentage of nodes to remove.\n"\
 "\t-t, --format <TYPE>\n"\
-"\t\tThe format of the file containing the graph, admitted types are:\n"\
+"\t\tThe format of the file containing the graph, supported types are:\n"\
 "\t\t\t- 0 (DIMACS)\n"\
 "\t\t\t- 1 (Edges List) The first line of the file is expected to contain the number of nodes\n"\
 "\t\t\t    and edges of the graph in the following format: \"# Nodes: <NUMBER> Edges: <NUMBER>\"  \n\n"
@@ -56,7 +55,7 @@ int main(int argc, char ** argv){
 
     struct sigaction new_act;
     int         gtype;                  // Graph type (see enum graph_type)
-    char        c;                      // getopt char
+    int        c;                      // getopt char
     int 	    read_edges;				// Determine if read_graph should read also the edges list
     VTYPE       n, m;                  // n -> number of vertices, m -> number of edges
     VTYPE	    node_perc;		       // percentage of node to output

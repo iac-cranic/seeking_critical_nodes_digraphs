@@ -35,29 +35,28 @@
 #define DEGREE_OUT_CMD(graph,result) igraph_degree(&graph, &result, igraph_vss_all(), IGRAPH_OUT, 0)
 #define PAGERANK_CMD(graph,result) igraph_pagerank(&graph, IGRAPH_PAGERANK_ALGO_PRPACK, &result, 0, igraph_vss_all(), 0, 0.85, 0, 0);
 
-#define USAGE "\nUsage: igraph_iterative --graph <FILE_NAME> --format <TYPE> --outfile <FILE_NAME> --metric <METRIC_TYPE>\n\n"\
-	"\tThe program tests the auxiliary wrapper functions to igraph\n\n"\
-"\t-f, --graph <FILE_NAME>\n"\
-"\t\tRead the graph from file <FILE_NAME>.\n"\
-"\t-m, --metric <METRIC_TYPS>\n"\
-"\t\tSupported metrics are:\n"\
-"\t\t\t- 1 Betwenness centrality\n"\
-"\t\t\t- 2 Closeness (all)\n"\
-"\t\t\t- 21 Closeness (in)\n"\
-"\t\t\t- 22 Closeness (out)\n"\
-"\t\t\t- 3 Degree (all)\n"\
-"\t\t\t- 31 Degree (in)\n"\
-"\t\t\t- 32 Degree (out)\n"\
-"\t\t\t- 4 Pagerank\n"\
-"\t-o, --outfile <FILE_NAME>\n"\
-"\t\tThe output filename <FILE_NAME>.\n"\
-"\t-p, percentage <PERCENTAGE>.\n"\
-"\t\tThe percentage of nodes to output.\n"\
-"\t-t, --format <TYPE>\n"\
-"\t\tThe format of the file containing the graph, admitted types are:\n"\
-"\t\t\t- 0 (DIMACS)\n"\
-"\t\t\t- 1 (Edges List) The first line of the file is expected to contain the number of nodes\n"\
-"\t\t\t    and edges of the graph in the following format: \"# Nodes: <NUMBER> Edges: <NUMBER>\"  \n\n"
+#define USAGE "\nUsage: igraph_standard --graph <FILE_NAME> --format <TYPE> --outfile <FILE_NAME> --metric <METRIC_TYPE> --percentage <PERCENTAGE>\n\n"\
+                   "\t-f, --graph <FILE_NAME>\n"\
+                       "\t\tRead the graph from file <FILE_NAME>.\n"\
+                   "\t-m, --metric <METRIC_TYPS>\n"\
+                       "\t\tSupported metrics are:\n"\
+                          "\t\t\t- 1 Betwenness centrality\n"\
+                          "\t\t\t- 2 Closeness (all)\n"\
+                          "\t\t\t- 21 Closeness (in)\n"\
+                          "\t\t\t- 22 Closeness (out)\n"\
+                          "\t\t\t- 3 Degree (all)\n"\
+                          "\t\t\t- 31 Degree (in)\n"\
+                          "\t\t\t- 32 Degree (out)\n"\
+                          "\t\t\t- 4 Pagerank\n"\
+                   "\t-o, --outfile <FILE_NAME>\n"\
+                       "\t\tThe name of the output file.\n"\
+                   "\t-p, --percentage <PERCENTAGE>.\n"\
+                       "\t\tThe percentage of nodes to remove.\n"\
+                   "\t-t, --format <TYPE>\n"\
+                       "\t\tThe format of the file containing the graph, supported types are:\n"\
+                          "\t\t\t- 0 (DIMACS)\n"\
+                          "\t\t\t- 1 (Edges List) The first line of the file is expected to contain the number of nodes\n"\
+                          "\t\t\t    and edges of the graph in the following format: \"# Nodes: <NUMBER> Edges: <NUMBER>\"  \n\n"
 
 FILE *fout=NULL;
 FILE *ftime=NULL;
@@ -87,7 +86,7 @@ int main(int argc, char ** argv){
 
     struct sigaction new_act;
     int         gtype;                  // Graph type (see enum graph_type)
-    char        c;                      // getopt char
+    int         c;                      // getopt char
     int 	    read_edges;				// Determine if read_graph should read also the edges list
     VTYPE       n, m;                  // n -> number of vertices, m -> number of edges
     VTYPE	    node_perc;		       // percentage of node to output

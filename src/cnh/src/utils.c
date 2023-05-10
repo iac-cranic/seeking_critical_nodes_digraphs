@@ -60,18 +60,23 @@ void Free(void *ptr){
 
 void usage(char *cmd)
 {
-    printf("usage: %s -f <input_file> -t <file_type> -o outfile [-r <root> -k <number_of_vertices_to_remove> (default =1) -h]\n", cmd);
-    printf("supported file types:\n");
-    printf("type 0 (DIMACS)\n");
-    printf("type 1 (RMAT)\n");
-    printf("\n-r specify the source vertex\n");
-    printf("\n-k specify the number of vertex to remove. It should be 0 < k < #Vertices \n");
-    printf("-h prints this short help\n");
-	#ifdef LARGE
-		printf("LARGE");
-	#else
-		printf("NOTDEFINED");
-	#endif
+    printf("Usage: %s -f <INPUT_FILE> -t <FILE_TYPE> -o <OUTPUT_FILE> [-r <ROOT>] [-k <NUMBER>] [-h]\n", cmd);
+    printf("\n\t-f <INPUT_FILE> \n");
+    printf("\t   Read the graph from file <INPUT_FILE>.\n");
+    printf("\t-t <FILE_TYPE> \n");
+    printf("\t   The supported file types are 0 or 1; 0 for the DIMACS format and 1 for the RMAT format.\n");
+    printf("\t-o <OUTPUT_FILE> \n");
+    printf("\t   Write the results in the file <OUTPUT_FILE>.\n");
+    printf("\t-r <ROOT> \n");
+    printf("\t   Specify the source vertex\n");
+    printf("\t-k <NUMBER>\n"); 
+    printf("\t   Specify the number of vertex to remove. It should be 0 < NUMBER < #Vertices. The default value is 1. \n");
+    printf("\t-h prints this short help\n\n");
+//    #ifdef LARGE
+//	printf("LARGE");
+//    #else
+//	printf("NOTDEFINED");
+//    #endif
 }
 
 

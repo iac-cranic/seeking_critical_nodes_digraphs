@@ -10,7 +10,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <bsd/string.h>
+#ifndef DARWIN
+  #include <bsd/string.h>
+#endif
 
 /* MACRO used to change the color of the standard output */
 #define TXT_RED                     "\033[0;31m"
